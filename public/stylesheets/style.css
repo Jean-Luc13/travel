@@ -24,7 +24,7 @@ body {
         text-decoration: none;
         text-transform: uppercase;
         color: #161212; }
-  body section div {
+  body section figcaption div {
     text-align: center; }
   body section figcaption img {
     width: 100%;
@@ -40,14 +40,11 @@ body {
     width: 100%;
     padding: 0 0.5em; }
   body main #phili .text-over {
-    position: absolute;
-    bottom: 1.6em;
-    left: 1.8em; }
+    position: absolute; }
     body main #phili .text-over h2 {
       font-size: 1.3em;
       text-align: center;
       position: relative;
-      top: 35em;
       left: 0;
       width: 100%; }
       body main #phili .text-over h2 span {
@@ -64,7 +61,6 @@ body {
     body main #phili .text-over p {
       text-align: center;
       position: relative;
-      top: 45em;
       left: 0;
       width: 100%; }
       body main #phili .text-over p span {

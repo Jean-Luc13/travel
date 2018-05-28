@@ -64,13 +64,15 @@ body {
 
     section {
         
-        div {
-
-            text-align: center;
-            
-        }
+       
 
         figcaption {
+
+            div {
+
+                text-align: center;
+                
+            }
             
             img {
                 width: 100%;
@@ -115,14 +117,14 @@ body {
                 .text-over {
 
                     position: absolute;
-                    bottom: 1.6em;
-                    left: 1.8em;
+                    // bottom: 1.6em;
+                    // left: 1.8em;
 
                     h2 {
                         font-size: 1.3em;
                         text-align: center;
                         position: relative; 
-                        top: 35em; 
+                        // top: 35em; 
                         left: 0; 
                         width: 100%;
             
@@ -138,7 +140,7 @@ body {
                     p {
                         text-align: center;
                         position: relative; 
-                        top: 45em; 
+                        // top: 45em; 
                         left: 0; 
                         width: 100%;
 
