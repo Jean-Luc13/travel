@@ -6,9 +6,12 @@ var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 const mongoose = require('mongoose');
 
+var Newsletter = require('./public/models/Newsletter');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var detinationsRouter = require('./routes/destinations');
+var signupRouter = require('./routes/signup');
 
 
 mongoose.connect('mongodb://jltravel:jltravel@ds137600.mlab.com:37600/travelsite');
@@ -33,7 +36,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/destinations', detinationsRouter);
+app.use('/newsletter', signupRouter);
 
+app.post('/newsletters', function(req, res){
+    
+  var newsletter = new Newsletter();
+  newsletter.firstName = req.body.firstName;
+  newsletter.lastName = req.body.lastName;
+  newsletter.email = req.body.email;
+  
+
+  newsletter.save(function (error){
+      if (error)
+          res.send(error);
+
+      res.json(
+          {
+              message: 'Contact saved!',
+              post: newsletter
+          }
+      );
+  });
+
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

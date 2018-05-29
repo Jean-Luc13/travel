@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head.ejs %>
+  </head>
+  <body>
+    
+    <header>
+      <% include ./partials/header.ejs %>
+      
+  </header>
+
+  <main>
+      
+    <form action="http://localhost:3000/newsletters" method="post">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Last Name</label>
+            <input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" class="form-control" id="email" placeholder="example@email.com" required>
+        </div>
+        
+        
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>      
+      
+  </main>
+  
+
+  
+<hr>
+  </body>
+</html>
+
+
+
+
