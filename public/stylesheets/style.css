@@ -1,8 +1,8 @@
 body {
-  margin: 20px;
   background: black;
   font-family: Arial, Helvetica, sans-serif;
-  padding-top: 20px; }
+  padding-top: 1em;
+  color: aliceblue; }
   body header {
     max-width: 100%;
     text-align: center; }
@@ -17,12 +17,13 @@ body {
         margin: 0.2em;
         border-radius: 0.5em; }
         body header nav ul li:hover {
-          background: rgba(0, 0, 0, 0.268);
+          background: rgba(0, 255, 251, 0.782);
           color: #161212;
           text-decoration: underline;
           opacity: 0.8; }
       body header nav ul a {
-        font-size: 1.2em;
+        font-size: 0.8em;
+        font-weight: bolder;
         text-decoration: none;
         text-transform: uppercase;
         color: #161212; }
@@ -30,11 +31,9 @@ body {
     text-align: center; }
   body section figcaption img {
     width: 100%;
-    border: 0.2em solid #00cbc7;
     position: cover; }
   body main #phili img {
     width: 100%;
-    border: 0.2em solid #00cbc7;
     position: cover;
     z-index: -1; }
   body main #phili div {
@@ -75,19 +74,45 @@ body {
       border-radius: 0.5em; }
       body main #phili .text-over p span .space {
         padding: 0 0.5em; }
-  body main {
+  body .main {
     background-image: url("https://homeiswhereyourbagis.com/wp-content/uploads/2015/01/El-Nido-Island-Hopping-07.jpg"); }
-    body main form {
-      padding: 1.5em 12.5em 25.5em 12.5em; }
-      body main form button {
+    body .main form {
+      z-index: 1;
+      padding: 1em 1.5em 18.5em 12.5em;
+      color: #161212; }
+      body .main form button {
         margin: 1em;
         border-radius: 0.7em;
         float: right; }
-      body main form .form-group {
+      body .main form .form-group {
         padding: 1em;
         text-align: right; }
-        body main form .form-group .form-control {
+        body .main form .form-group .form-control {
           width: 15em;
           border-radius: 0.5em; }
+  body div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px; }
+  body div.gallery:hover {
+    border: 1px solid #777; }
+  body div.gallery img {
+    width: 100%;
+    height: auto; }
+  body div.desc .text {
+    visibility: hidden;
+    padding: 15px;
+    text-align: center;
+    position: absolute;
+    z-index: 1; }
+  body div.desc:hover .text {
+    visibility: visible; }
+  body #map {
+    height: 20em;
+    width: 20em;
+    float: right; }
+  body article {
+    float: left; }
 
 /*# sourceMappingURL=style.css.map */

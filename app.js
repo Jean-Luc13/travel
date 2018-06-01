@@ -12,6 +12,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var detinationsRouter = require('./routes/destinations');
 var signupRouter = require('./routes/signup');
+var newdesRouter = require('./routes/newdes');
 
 
 mongoose.connect('mongodb://jltravel:jltravel@ds137600.mlab.com:37600/travelsite');
@@ -37,7 +38,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/destinations', detinationsRouter);
 app.use('/newsletter', signupRouter);
+app.use('/create', newdesRouter);
 
+// Posting newsletter sign up
 app.post('/newsletters', function(req, res){
     
   var newsletter = new Newsletter();
@@ -59,6 +62,8 @@ app.post('/newsletters', function(req, res){
   });
 
 })
+
+// Posting Create destination
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
