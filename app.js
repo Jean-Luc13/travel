@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 const mongoose = require('mongoose');
@@ -11,20 +12,28 @@ var Newsletter = require('./public/models/Newsletter');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var detinationsRouter = require('./routes/destinations');
-var signupRouter = require('./routes/signup');
-var newdesRouter = require('./routes/newdes');
+var newslettersRouter = require('./routes/newsletters');
+var createRouter = require('./routes/create');
 
 
 mongoose.connect('mongodb://jltravel:jltravel@ds137600.mlab.com:37600/travelsite');
+
+var Schema = mongoose.Schema;
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
@@ -37,31 +46,31 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/destinations', detinationsRouter);
-app.use('/newsletter', signupRouter);
-app.use('/create', newdesRouter);
+app.use('/newsletter', newslettersRouter);
+app.use('/create', createRouter);
 
 // Posting newsletter sign up
-app.post('/newsletters', function(req, res){
+// app.post('/newsletters', function(req, res){
     
-  var newsletter = new Newsletter();
-  newsletter.firstName = req.body.firstName;
-  newsletter.lastName = req.body.lastName;
-  newsletter.email = req.body.email;
+//   var newsletter = new Newsletter();
+//   newsletter.firstName = req.body.firstName;
+//   newsletter.lastName = req.body.lastName;
+//   newsletter.email = req.body.email;
   
 
-  newsletter.save(function (error){
-      if (error)
-          res.send(error);
+//   newsletter.save(function (error){
+//       if (error)
+//           res.send(error);
 
-      res.json(
-          {
-              message: 'Contact saved!',
-              post: newsletter
-          }
-      );
-  });
+//       res.json(
+//           {
+//               message: 'Contact saved!',
+//               post: newsletter
+//           }
+//       );
+//   });
 
-})
+// })
 
 // Posting Create destination
 
