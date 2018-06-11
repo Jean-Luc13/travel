@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "npm rebulid node-sass"
+    "postinstall": "npm rebuild node-sass"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
