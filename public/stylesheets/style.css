@@ -5,13 +5,15 @@ body {
   color: aliceblue; }
   body header {
     max-width: 100%;
-    text-align: center; }
+    text-align: center;
+    font-family: 'Miltonian';
+    letter-spacing: 0.01em; }
     body header nav {
       z-index: 100;
       position: fixed;
       left: 0; }
       body header nav ul li {
-        background: rgba(0, 225, 255, 0.261);
+        background: rgba(255, 255, 255, 0.919);
         display: inline-block;
         padding: 0.5em;
         margin: 0.2em;
@@ -29,6 +31,8 @@ body {
         color: #161212; }
   body section figcaption div {
     text-align: center; }
+    body section figcaption div h1 {
+      font-family: 'Miltonian'; }
   body section figcaption img {
     width: 100%;
     position: cover; }
@@ -97,17 +101,19 @@ body {
     width: 180px; }
   body div.gallery:hover {
     border: 1px solid #777; }
+    body div.gallery:hover p {
+      text-align: center;
+      visibility: visible;
+      font-family: 'Miltonian';
+      color: rgba(255, 255, 255, 0.919);
+      position: relative;
+      text-decoration: none; }
   body div.gallery img {
     width: 100%;
     height: auto; }
-  body div.desc .text {
+  body div.desc p {
     visibility: hidden;
-    padding: 15px;
-    text-align: center;
-    position: absolute;
-    z-index: 1; }
-  body div.desc:hover .text {
-    visibility: visible; }
+    position: absolute; }
   body #map {
     height: 20em;
     width: 20em;
