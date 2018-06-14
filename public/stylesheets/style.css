@@ -106,8 +106,7 @@ body {
       visibility: visible;
       font-family: 'Miltonian';
       color: rgba(255, 255, 255, 0.919);
-      position: relative;
-      text-decoration: none; }
+      position: relative; }
   body div.gallery img {
     width: 100%;
     height: auto; }
