@@ -29,6 +29,17 @@ body {
         text-decoration: none;
         text-transform: uppercase;
         color: #161212; }
+  body .create {
+    background-image: url("https://hdwallsource.com/img/2014/9/beautiful-norway-wallpaper-26766-27482-hd-wallpapers.jpg");
+    height: 1080px; }
+    body .create form {
+      text-align: right;
+      color: #000; }
+    body .create div h2 {
+      font-family: 'Miltonian';
+      margin-top: 2.5em;
+      padding-top: 1.5em;
+      text-align: center; }
   body section figcaption div {
     text-align: center; }
     body section figcaption div h1 {

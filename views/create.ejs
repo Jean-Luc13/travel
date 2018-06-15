@@ -9,11 +9,50 @@
       <% include ./partials/header.ejs %>
       
   </header>
+  <div class="create">
+  <div>
+  <h2>Create a new destination</h2>
+  </div>
 
-  <main>
+    <form   enctype="multipart/form-data" action="/destinations" method="POST">
+
+        <label for="destinationName">Destination Name</label>
+        <input type="text" name="destinationName" placeholder="Destination Name">
+
+        <hr>
+
+        <label for="destinationWriteUp">Destination write-up</label>
+        <textarea type="text" name="destinationWriteUp" placeholder="Destination write-up approx 150 words">
+        </textarea>
+
+        <hr>
+
+        <label for="coordinates">Google map coordinates - longitude + latitude</label>
+        <input type="text" name="longitude" placeholder="Destinations longitude">
+        <input type="text" name="latitude" placeholder="Destinations latitude">
+
+        <hr>
+        <label for="uploadedFile">Background image</label>
+        <input type="file" name="uploadedFile">
+        <hr>
+
+        <label for="">Gallery images</label>
+        <input type="file" name="uploadedFile2">
+        <input type="file" name="uploadedFile3">
+        <input type="file" name="uploadedFile4">
+        <input type="file" name="uploadedFile5">
+        
+
+
+
+        <input type="submit">
+    </form>
+  </div>
+
+  <!-- <main>
       <h1>hello</h1>
       
-  </main>
+  </main> -->
   
 
   

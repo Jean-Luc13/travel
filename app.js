@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 const mongoose = require('mongoose');
+const fileUpload = require('express-fileupload');
 
 var Newsletter = require('./public/models/Newsletter');
 
@@ -42,6 +43,7 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -50,27 +52,27 @@ app.use('/newsletter', newslettersRouter);
 app.use('/create', createRouter);
 
 // Posting newsletter sign up
-// app.post('/newsletters', function(req, res){
+app.post('/newsletters', function(req, res){
     
-//   var newsletter = new Newsletter();
-//   newsletter.firstName = req.body.firstName;
-//   newsletter.lastName = req.body.lastName;
-//   newsletter.email = req.body.email;
+  var newsletter = new Newsletter();
+  newsletter.firstName = req.body.firstName;
+  newsletter.lastName = req.body.lastName;
+  newsletter.email = req.body.email;
   
 
-//   newsletter.save(function (error){
-//       if (error)
-//           res.send(error);
+  newsletter.save(function (error){
+      if (error)
+          res.send(error);
 
-//       res.json(
-//           {
-//               message: 'Contact saved!',
-//               post: newsletter
-//           }
-//       );
-//   });
+      res.json(
+          {
+              message: 'Contact saved!',
+              post: newsletter
+          }
+      );
+  });
 
-// })
+})
 
 // Posting Create destination
 
